@@ -1,0 +1,6 @@
+[submodule "firmware_docker/qmk_firmware"]
+	path = firmware_docker/qmk_firmware
+	url = ../qmk_firmware/
+[submodule "loader_docker/teensy_loader_cli"]
+	path = loader_docker/teensy_loader_cli
+	url = ../teensy_loader_cli/
