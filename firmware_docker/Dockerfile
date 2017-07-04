@@ -28,4 +28,4 @@ COPY . /work
 
 VOLUME /out
 
-CMD guest_build.sh
+CMD ./guest_build.sh
