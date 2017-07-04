@@ -32,20 +32,20 @@ function find_teensy_usb_devices()
 
 function select_device()
 {
-  local matching_devices=( $1 )
+  local teensy_devices=( $1 )
 
-  if (( ${#matching_devices[@]} == 0 )); then
-    throw "No matching devices found."
-  elif (( ${#matching_devices[@]} > 1 )); then
-    warn "Multiple matching devices found: ${matching_devices[@]}"
+  if (( ${#teensy_devices[@]} == 0 )); then
+    throw "No teensy devices found."
+  elif (( ${#teensy_devices[@]} > 1 )); then
+    warn "Multiple teensy devices found: ${teensy_devices[@]}"
     warn "Will use the first one."
   fi
 
-  echo "${matching_devices[@]}"
+  echo "${teensy_devices[@]}"
 }
 
-matching_devices=$(find_teensy_usb_devices)
-selected_device=$(select_device "$matching_devices")
+teensy_devices=$(find_teensy_usb_devices)
+selected_device=$(select_device "$teensy_devices")
 warn "Selected device: $selected_device"
 
 dev_path="$usb_path/$selected_device"
