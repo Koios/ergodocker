@@ -8,8 +8,6 @@ RUN apt-get install -y --no-install-recommends \
   gcc \
   libusb-dev
 
-RUN echo "root:Docker!" | chpasswd
-
 RUN useradd --shell /bin/bash docker
 USER docker
 WORKDIR /work
