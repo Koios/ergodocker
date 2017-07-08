@@ -6,5 +6,5 @@ export subproject=${2:-ez}
 export keymap=${3:-koios}
 
 cd qmk_firmware
-make
+make COMBO_ENABLE=yes
 cp *.hex /out/
