@@ -2,4 +2,4 @@
 
 source docker_common.sh
 
-docker rm --volumes qmk_firmware_built
+docker rm --volumes qmk_firmware_built || true
