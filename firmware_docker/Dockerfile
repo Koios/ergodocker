@@ -8,12 +8,13 @@ RUN apt-get install --no-install-recommends -y \
     avr-libc
 
 RUN useradd --shell /bin/bash docker
-USER docker
 
 RUN mkdir /work
 WORKDIR /work
 COPY . /work
+RUN chown -R docker /work
 
 VOLUME /out
 
+USER docker
 CMD ./guest_build.sh
