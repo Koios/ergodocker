@@ -9,10 +9,12 @@ RUN apt-get install -y --no-install-recommends \
   libusb-dev
 
 RUN useradd --shell /bin/bash docker
-USER docker
 WORKDIR /work
 
 COPY ./teensy_loader_cli/teensy_loader_cli.c ./
+RUN chown -R docker /work
+
+USER docker
 RUN gcc -std=c11 -Wall -Wextra -pedantic -DUSE_LIBUSB \
   -o teensy_loader_cli \
   teensy_loader_cli.c \
