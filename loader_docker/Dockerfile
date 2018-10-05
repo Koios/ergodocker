@@ -19,3 +19,6 @@ RUN gcc -std=c11 -Wall -Wextra -pedantic -DUSE_LIBUSB \
   -o teensy_loader_cli \
   teensy_loader_cli.c \
   -lusb
+
+# change to root here to allow device access
+USER root
